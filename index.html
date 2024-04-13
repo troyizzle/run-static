@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <title>Troy & Fanny 5K Runs</title>
+
+    <style>
+    @font-face {
+      font-family: Geist;
+      src: url('Geist-Regular.ttf');
+    }
+    body {
+      background-color: #000000;
+      color: #ededed;
+      font-family: Geist, sans-serif;
+    }
+
+    .container {
+      margin: 0 auto;
+      max-width: 800px;
+      padding: 1em;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2em;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #ededed;
+      padding: 0.5em;
+    }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body class="container">
+    <main>
+      <h1>Troy & Fanny 5K Runs</h1>
+      <canvas id="myChart"></canvas>
+
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Run Date</th>
+              <th>Run Event</th>
+              <th>Troy's Time</th>
+              <th>Fanny's Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2024-03-09</td>
+              <td>Oak MTN Color Run</td>
+              <td>0:46:00</td>
+              <td>0:46:00</td>
+            </tr>
+            <tr>
+              <td>2024-03-23</td>
+              <td>Rumpshaker</td>
+              <td>0:43:04</td>
+              <td>0:43:05</td>
+            </tr>
+            <tr>
+              <td>2024-04-13</td>
+              <td>Red Shoe Run</td>
+              <td>0:39:55</td>
+              <td>0:39:56</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </body>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Oak MTN Color Run', 'Rumpshaker', 'Red Shoe Run'],
+      datasets: [{
+        label: 'Troy',
+        data: [46.0, 43.04, 39.55],
+        borderWidth: 1
+      },
+      {
+        label: 'Fanny',
+        data: [46.0, 43.05, 39.56],
+        borderWidth: 1
+      }
+      ]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+</html>
